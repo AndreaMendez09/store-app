@@ -7,7 +7,6 @@ import com.inditex.storeapp.domain.exceptions.ProductNotFound;
 import com.inditex.storeapp.domain.mappers.ProductPriceMapper;
 import com.inditex.storeapp.domain.repo.ProductPriceRepository;
 import com.inditex.storeapp.infra.api.res.ProductPriceRes;
-import org.springframework.beans.InvalidPropertyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
