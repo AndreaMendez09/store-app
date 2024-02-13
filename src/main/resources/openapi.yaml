@@ -1,0 +1,61 @@
+openapi: 3.0.0
+info:
+  title: Store app
+  description: Retrieve product prices
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /prices:
+    get:
+      summary: Retrieve product price
+      description: Retrieves the price of a product with the given parameters
+      parameters:
+        - in: query
+          name: date
+          description: Date of price application
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: productId
+          description: Product identifier
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: brandId
+          description: Brand identifier
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Price of the product
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  productId:
+                    type: integer
+                  brandId:
+                    type: integer
+                  priceList:
+                    type: integer
+                  startDate:
+                    type: string
+                    format: date-time
+                  endDate:
+                    type: string
+                    format: date-time
+                  price:
+                    type: number
+                  currency:
+                    type: string
+        '400':
+          description: Invalid input parameters
+        '404':
+          description: No prices found for the product
+        '500':
+          description: Internal server error

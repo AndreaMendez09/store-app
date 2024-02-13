@@ -1,4 +1,4 @@
-package com.intidex.storeapp;
+package com.inditex.storeapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
